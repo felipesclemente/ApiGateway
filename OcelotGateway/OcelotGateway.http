@@ -1,0 +1,168 @@
+@OcelotGateway_HostAddress = http://localhost:5021
+
+GET {{OcelotGateway_HostAddress}}/auth/health
+Accept: application/json
+
+###
+
+POST {{OcelotGateway_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "Credencial": "felipe@fastfood.com",
+  "Senha": "hackathon"
+}
+
+###
+
+GET {{OcelotGateway_HostAddress}}/logout
+Accept: application/json
+
+###
+
+GET {{OcelotGateway_HostAddress}}/cardapio/health
+Accept: application/json
+
+###
+
+GET {{OcelotGateway_HostAddress}}/cardapio/gerar
+Accept: application/json
+
+###
+
+POST {{OcelotGateway_HostAddress}}/cardapio/adicionar
+Content-Type: application/json
+
+{
+  "Id": "744206da-5902-49cb-80e7-67bed51037fc",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "NomeItem": "Pizza Broto Marguerita",
+  "Descricao": "Pizza de 15cm com mussarela, molho de tomate, e tomate fatiado",
+  "Preco": 23.99,
+  "EspecieItem": "Prato",
+  "Estoque": 30
+}
+
+###
+
+POST {{OcelotGateway_HostAddress}}/cardapio/editar
+Content-Type: application/json
+
+{
+  "Id": "082e4635-da8c-46e5-8d3a-7057269360f9",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "ItemId": 9,
+  "Preco": 22,
+  "Estoque": 15
+}
+
+###
+
+DELETE {{OcelotGateway_HostAddress}}/cardapio/excluir
+Content-Type: application/json
+
+{
+  "Id": "06f7f54e-01b4-47bf-97d4-9683e114308a",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "ItemId": 10
+}
+
+###
+
+GET {{OcelotGateway_HostAddress}}/pedidos/health
+Accept: application/json
+
+###
+
+GET {{OcelotGateway_HostAddress}}/pedidos/gerar
+Accept: application/json
+
+###
+
+POST {{OcelotGateway_HostAddress}}/pedidos/aceitar
+Content-Type: application/json
+
+{
+  "Id": "ba413fb6-397f-4c23-80ee-840f7fb781e8",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "PedidoId": 2
+}
+
+###
+
+POST {{OcelotGateway_HostAddress}}/pedidos/rejeitar
+Content-Type: application/json
+
+{
+  "Id": "3d149a57-5aaa-42fd-bfcd-b1893f69824e",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "PedidoId": 1
+}
+
+###
+
+POST {{OcelotGateway_HostAddress}}/pedidos/cancelar
+Content-Type: application/json
+
+{
+  "Id": "6ddb0dea-1197-4966-a495-9c89b24545f1",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "PedidoId": 2,
+  "Justificativa": "Duplicidade"
+}
+
+###
+
+GET {{OcelotGateway_HostAddress}}/cestas/health
+Accept: application/json
+
+###
+
+POST {{OcelotGateway_HostAddress}}/cestas/adicionar
+Content-Type: application/json
+
+{
+  "Id": "9fe8af94-07d3-4d66-b4ea-b83d416dbd4f",
+  "Timestamp": "2025-07-20T00:00:00",
+  "ItemId": 2,
+  "NomeItem": "Pizza Broto Calabresa",
+  "PrecoUnitario": 20.00,
+  "Quantidade": 2
+}
+
+###
+
+POST {{OcelotGateway_HostAddress}}/cestas/remover
+Content-Type: application/json
+
+{
+  "Id": "2aebdd5a-2940-4199-8a67-0fb9333b6396",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "ItemId": 2,
+  "NomeItem": "Pizza Broto Calabresa",
+  "PrecoUnitario": 20,
+  "Quantidade": 1
+}
+
+###
+
+DELETE {{OcelotGateway_HostAddress}}/cestas/esvaziar
+Content-Type: application/json
+
+{
+  "Id": "0c92eeae-88a2-4762-bf94-1e2e2d998320",
+  "TimeStamp": "2025-07-20T00:00:00"
+}
+
+###
+
+POST {{OcelotGateway_HostAddress}}/cestas/checkout
+Content-Type: application/json
+
+{
+  "Id": "4248b66f-1395-428f-a02e-ddcb8c4dbf9e",
+  "TimeStamp": "2025-07-20T00:00:00",
+  "FormaEntrega": "Delivery"
+}
+
+###

@@ -1,0 +1,295 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/auth/health",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.identidades",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/health",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/auth/Login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.identidades",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/auth/Logout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.identidades",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/logout",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cardapio/health",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cardapio",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cardapio/health",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cardapio/GetCardapio",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cardapio",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cardapio/gerar",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cardapio/AdicionarItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cardapio",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cardapio/adicionar",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cardapio/EditarItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cardapio",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cardapio/editar",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cardapio/ExcluirItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cardapio",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cardapio/excluir",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/pedidos/health",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.pedidos",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/health",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/pedidos/GetPedidosAbertos",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.pedidos",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/gerar",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/pedidos/AceitarPedido",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.pedidos",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/aceitar",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/pedidos/RejeitarPedido",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.pedidos",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/rejeitar",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/pedidos/CancelarPedido",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.pedidos",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/cancelar",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cestas/health",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cestas",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cestas/health",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cestas/AdicionarItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cestas",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cestas/adicionar/",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "AddHeadersToRequest": {
+        "UserId": "Claims[UserId] > value[0] > |"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cestas/RemoverItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cestas",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cestas/remover",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "AddHeadersToRequest": {
+        "UserId": "Claims[UserId] > value[0] > |"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cestas/EsvaziarCesta",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cestas",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cestas/esvaziar",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "AddHeadersToRequest": {
+        "UserId": "Claims[UserId] > value[0] > |"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/cestas/Checkout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fft.cestas",
+          "Port": 53015
+        }
+      ],
+      "UpstreamPathTemplate": "/cestas/checkout",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies"
+      },
+      "AddHeadersToRequest": {
+        "UserId": "Claims[UserId] > value[0] > |"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "RateLimitOptions": {
+      "ClientWhitelist": [],
+      "EnableRateLimiting": true,
+      "Period": "1m",
+      "PeriodTimespan": 10,
+      "Limit": 10
+    }
+  }
+}
